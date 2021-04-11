@@ -6,6 +6,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    QObject::connect(this, SecondDisplay(),this,displayLabel2());
 }
 
 MainWindow::~MainWindow()
@@ -17,6 +18,12 @@ MainWindow::~MainWindow()
 void MainWindow::on_pushButton_pressed()
 {
 
-    ui->label->setText("The Button is pressed");
+    ui->label->setText("Button pressed");
+    emit SecondDisplay();
 
+}
+
+void MainWindow::displayLabel2()
+{
+    ui->label_2->setText("Button pressed");
 }

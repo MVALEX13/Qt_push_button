@@ -15,8 +15,12 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+signals :
+    void SecondDisplay();
+
 private slots:
     void on_pushButton_pressed();
+    void displayLabel2();
 
 private:
     Ui::MainWindow *ui;
