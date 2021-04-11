@@ -1,12 +1,10 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    QObject::connect(this, SecondDisplay(),this,displayLabel2());
+    QObject::connect(this, SIGNAL(SecondDisplay()),this,SLOT(displayLabel2()));
 }
 
 MainWindow::~MainWindow()
